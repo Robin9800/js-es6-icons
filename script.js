@@ -113,9 +113,7 @@ const arrayIcone = [
     }
 ];
 
-/* Milestone 1
-Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente
-il nome dell'icona e l'icona stessa.
+/* 
 
 Milestone 2
 Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
@@ -124,5 +122,33 @@ Milestone 3
 Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user).
 Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.*/
 
-//Dichiaro una variabile collegata al container nell'html
+/*Milestone 1
+Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente
+il nome dell'icona e l'icona stessa.*/
+
+//Dichiaro una variabile collegata al container nell'html.
 const container = document.getElementById('container');
+
+//Creiamo una funzione che prenderà come parametro l'array di icone.
+createIcons(arrayIcone);
+
+function createIcons (data){
+
+    //Creo un ciclo forEach che mi crea ogni elemento sulla base del tipo standard inserito.
+    data.array.forEach(element => {
+    //<i class="fa-solid fa-cat"></i>
+
+    //Destrutturo il file estraendo i dati che mi servono per realizzare il template.
+    const {family, prefix, name} = element
+    
+    //Creo la struttura standard del singolo elemento.
+    const template = `
+    <div>
+        <i class="${family} ${prefix} ${name}"></i>
+        <p>${name}</p>
+
+    </div>
+    `
+    });
+    
+}

@@ -1,0 +1,9 @@
+.title h1{
+    color: hsl(198deg 76% 50%);
+}
+.filtri{
+    background-color: hsl(198deg 76% 50%);
+}
+.filtri p{
+    color: white;
+}
