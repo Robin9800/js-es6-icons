@@ -12,22 +12,30 @@
 </head>
 <body>
     <div class="container">
-        <div class="row title">
-            <div class="col-12 text-start mt-3 ps-0">
-                <h1>FontIcons</h1>
+        <div class="row d-flex title">
+            <div class="col-6 text-start mt-3 ms-3 ps-0">
+                <h1 class="mb-0">FontIcons</h1>
             </div>
         </div>
 
-        <div class="row d-flex">
-            <div class="col-12 filtri text-center fs-5 px-0">
-                <p class="my-2 fs-6">FILTRA PER TIPO</p>
-                <input class="fs-6" type="text">
+        <div class="row d-flex  flex-row">
+            <div class="col-12 d-inline-flex justify-content-center filtri text-center fs-5 px-0">
+                <p class="my-2 fs-6 me-2 my-3">FILTRA PER TIPO</p>
+                <select name="scelta" id="select" class="my-3 ms-2">
+                    <option value="all">All</option>
+                    <option value="animal">Animal</option>
+                    <option value="user">User</option>
+                    <option value="vegetable">Vegetable</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div id="icon-section" class="col-12">
             </div>
         </div>
     </div>
 
-    <div class="containerIcone">
-    </div>
+    
 
 
 

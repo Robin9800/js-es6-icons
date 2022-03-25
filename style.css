@@ -7,3 +7,9 @@
 .filtri p{
     color: white;
 }
+.icon-section{
+    background-color: hsl(0deg 0% 87%);
+}
+#select{
+    font-size: 12px;
+}

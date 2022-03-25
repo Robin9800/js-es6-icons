@@ -127,12 +127,23 @@ Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni ic
 il nome dell'icona e l'icona stessa.*/
 
 //Dichiaro una variabile collegata al container nell'html.
-const iconContainer = document.getElementById('body .containerIcone');
 
-//Creiamo una funzione che prenderà come parametro l'array di icone.
-createIcons(arrayIcone);
 
-function createIcons(data){
+
+document.addEventListener('DOMContentLoaded',()=>{
+    const iconContainer = document.getElementById('icon-section');
+    createIcons(arrayIcone, iconContainer);
+
+    //Dichiaro una variabile associata al select nel html.
+    const filter = document.getElementById('select');
+    /* Associo un evento alla variabile filter per reagire ad ogni cambio di valore*/
+    filter.addEventListener('change',(ev) =>{
+        console.log(ev.target.value);
+    })
+})
+
+//Creiamo una funzione che prenderà come parametro l'array di icone e il container.
+function createIcons(data, container){
 
     //Creo una variabile d'appoggio inzialmente vuota che verrà riempita una volta terminato il ciclo.
     let allIcons = '';
@@ -154,5 +165,6 @@ function createIcons(data){
         allIcons += template;
     });
     // Una volta finito di ciclare aggiungo la variabile contenente le icone dentro il container di icone.
-    iconContainer.innerHTML = allIcons;
+    container.innerHTML = allIcons;
 }
+
