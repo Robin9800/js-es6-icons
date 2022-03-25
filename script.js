@@ -138,7 +138,21 @@ document.addEventListener('DOMContentLoaded',()=>{
     const filter = document.getElementById('select');
     /* Associo un evento alla variabile filter per reagire ad ogni cambio di valore*/
     filter.addEventListener('change',(ev) =>{
-        console.log(ev.target.value);
+
+        //Se l'utente sceglie all allora esegui restituisci tutte le icone 
+        if(ev.target.value === 'all'){
+            createIcons(arrayIcone, iconContainer);
+        }else{
+
+            //Altrimenti, associo la funzione che mi filtra le icone ad una variabile.
+            const filteredIcon = arrayIcone.filter(function(icon){
+
+                //Ritorna se il tipo dell'icona è uguale al valore dell'scelto dall'utente.
+                return icon.type === ev.target.value;
+            })
+            createIcons(filteredIcon, iconContainer);
+        }
+        
     })
 })
 
@@ -151,12 +165,12 @@ function createIcons(data, container){
     data.forEach(element => {
 
         //Destrutturo il file estraendo i dati che mi servono per realizzare il template.
-        const {family, prefix, name} = element
+        const {family, prefix, name, type} = element
 
         //Creo la struttura standard del singolo elemento.
         const template = `
         <div>
-            <i class="${family} ${prefix}${name}"></i>
+            <i class="${family} ${type} ${prefix}${name}"></i>
             <p>${name}</p>
 
         </div>

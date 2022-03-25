@@ -13,3 +13,12 @@
 #select{
     font-size: 12px;
 }
+.user{
+    color:hsl(304deg 75% 31%);
+}
+.animal{
+   color:hsl(237deg 100% 50%);
+}
+.vegetable{
+    color:hsl(38deg 100% 50%);
+}
